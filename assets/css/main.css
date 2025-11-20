@@ -10357,6 +10357,83 @@ body.tp-magic-cursor #magic-cursor {
 }
 .dgm-footer-col-1 {
   padding-right: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+}
+.dgm-footer-col-1 .dgm-footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.dgm-footer-col-1 .dgm-footer-widget-paragraph {
+  max-width: 320px;
+  margin: 0 auto 30px;
+}
+.dgm-footer-col-1 .dgm-footer-widget-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.dgm-footer-col-1 .tp-copyright-2-left {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.dgm-footer-col-1 .tp-copyright-2-left p {
+  margin-left: 0 !important;
+  text-align: center;
+}
+/* Enhanced spacing and visual design for left column */
+.dgm-footer-col-1 .dgm-footer-widget-paragraph p {
+  color: #4a5568;
+  line-height: 1.8;
+  font-size: 15px;
+}
+.dgm-footer-col-1 .dgm-footer-logo img {
+  filter: drop-shadow(0 4px 12px rgba(147, 197, 253, 0.2));
+  transition: all 0.4s ease;
+}
+.dgm-footer-col-1 .dgm-footer-logo:hover img {
+  filter: drop-shadow(0 6px 16px rgba(147, 197, 253, 0.4));
+  transform: scale(1.08);
+}
+/* Beautiful divider after left column */
+.dgm-footer-col-1::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 10%;
+  height: 80%;
+  width: 2px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(147, 197, 253, 0.3) 20%,
+    rgba(196, 181, 253, 0.4) 50%,
+    rgba(167, 243, 208, 0.3) 80%,
+    transparent 100%);
+  border-radius: 2px;
+  animation: dividerGlow 4s ease-in-out infinite;
+}
+@keyframes dividerGlow {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 0 0 10px rgba(147, 197, 253, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(196, 181, 253, 0.5);
+  }
+}
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .dgm-footer-col-1::after {
+    display: none;
+  }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .dgm-footer-col-1 {
@@ -10659,38 +10736,61 @@ body.tp-magic-cursor #magic-cursor {
 .tp-copyright-2-border.app-copyright-border {
   border-color: rgba(33, 33, 45, 0.06);
 }
-/* Decorative Floating Particles */
+/* Decorative Floating Particles - Repositioned to avoid content overlap */
 .dgm-footer-area .particle {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
+  z-index: 1;
 }
+/* Particle 1 - Top Right Corner */
 .dgm-footer-area .particle-1 {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #93c5fd 0%, #c4b5fd 100%);
+  top: 8%;
+  right: 12%;
+  animation: float 8s ease-in-out infinite, glow 2s ease-in-out infinite;
+  box-shadow: 0 0 25px rgba(147, 197, 253, 0.7);
+}
+/* Particle 2 - Bottom Right Area */
+.dgm-footer-area .particle-2 {
   width: 8px;
   height: 8px;
-  background: linear-gradient(135deg, #93c5fd 0%, #c4b5fd 100%);
-  top: 20%;
-  left: 15%;
-  animation: float 8s ease-in-out infinite, glow 2s ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(147, 197, 253, 0.6);
-}
-.dgm-footer-area .particle-2 {
-  width: 6px;
-  height: 6px;
   background: linear-gradient(135deg, #c4b5fd 0%, #a7f3d0 100%);
-  top: 60%;
-  left: 80%;
+  bottom: 15%;
+  right: 25%;
   animation: float 10s ease-in-out infinite reverse, glow 2.5s ease-in-out infinite;
-  box-shadow: 0 0 15px rgba(196, 181, 253, 0.6);
+  box-shadow: 0 0 18px rgba(196, 181, 253, 0.7);
 }
+/* Particle 3 - Top Center Right */
 .dgm-footer-area .particle-3 {
   width: 10px;
   height: 10px;
   background: linear-gradient(135deg, #a7f3d0 0%, #93c5fd 100%);
-  top: 40%;
-  left: 50%;
+  top: 12%;
+  right: 35%;
   animation: float 12s ease-in-out infinite, glow 3s ease-in-out infinite;
-  box-shadow: 0 0 25px rgba(167, 243, 208, 0.6);
+  box-shadow: 0 0 28px rgba(167, 243, 208, 0.7);
+}
+/* Additional particles for better distribution */
+.dgm-footer-area .particle-4 {
+  width: 7px;
+  height: 7px;
+  background: linear-gradient(135deg, #93c5fd 0%, #a7f3d0 100%);
+  top: 45%;
+  right: 8%;
+  animation: float 9s ease-in-out infinite, glow 2.2s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(147, 197, 253, 0.6);
+}
+.dgm-footer-area .particle-5 {
+  width: 9px;
+  height: 9px;
+  background: linear-gradient(135deg, #c4b5fd 0%, #93c5fd 100%);
+  bottom: 8%;
+  right: 15%;
+  animation: float 11s ease-in-out infinite reverse, glow 2.8s ease-in-out infinite;
+  box-shadow: 0 0 22px rgba(196, 181, 253, 0.65);
 }
 @keyframes float {
   0%, 100% {
