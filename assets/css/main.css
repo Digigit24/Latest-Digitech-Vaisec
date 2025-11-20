@@ -5814,6 +5814,15 @@ body.tp-magic-cursor #magic-cursor {
 .header-sticky.tp-header-inner-style .tp-header-menu > nav > ul > li > a {
   padding: 10px 0;
 }
+.header-sticky.tp-header-ptb {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  min-height: auto;
+}
+.header-sticky.tp-header-ptb .container {
+  width: 100%;
+}
 .header-sticky.sticky-white-bg {
   background: rgba(255, 255, 255, 0.9);
 }
