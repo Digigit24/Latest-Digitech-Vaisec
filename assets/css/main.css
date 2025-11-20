@@ -5811,6 +5811,9 @@ body.tp-magic-cursor #magic-cursor {
 .header-sticky .tp-header-menu > nav > ul > li > a {
   padding: 22px 0;
 }
+.header-sticky.tp-header-inner-style .tp-header-menu > nav > ul > li > a {
+  padding: 10px 0;
+}
 .header-sticky.sticky-white-bg {
   background: rgba(255, 255, 255, 0.9);
 }
